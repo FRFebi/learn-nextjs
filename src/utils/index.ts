@@ -11,10 +11,12 @@ export async function fetchCars(filters: FilterProps) {
   url.searchParams.append("limit", `${limit}`);
   url.searchParams.append("fuel_type", fuel);
 
+  const key: string = process.env.RAPID_API_KEY || "";
+
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "895f9109c3msh72ab8ae9d84c6d2p16423ejsna502c0d061c9",
+      "X-RapidAPI-Key": key,
       "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
     },
   };
